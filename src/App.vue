@@ -1,22 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <hello-world msg="Welcome to Your Vue.js App" @input="inInput"/>
+  <div>
+    asdfasdf
+    <img alt="Vue logo" src="./assets/logo.png">
+    <hello-world msg="Welcome to Your Vue.js App" @input="inInput"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
   },
   methods: {
     inInput(item) {
       console.log(item);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>

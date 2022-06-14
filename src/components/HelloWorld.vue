@@ -42,30 +42,31 @@
 </template>
 
 <script>
-import slotComponent from "@/components/slotComponent";
+import slotComponent from '@/components/slotComponent';
+
 export default {
   name: 'HelloWorld',
   components: {
     slotComponent,
   },
+  props: {
+    msg: String,
+  },
   data() {
     return {
-      item : {
+      item: {
         type: String,
         default: '',
-      }
+      },
     };
-  },
-  props: {
-    msg: String
   },
   emits: {
     input: (item) => {
       if (item === '기민') return true;
       return false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
