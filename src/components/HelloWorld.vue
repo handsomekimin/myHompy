@@ -27,14 +27,43 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <input type="text" v-model="item" @change="$emit('input',item)"/>
+    <slot-component>
+      <template v-slot:default>hihi</template>
+    </slot-component>
+    <input type="text" aria-label="textarea" />
+    <fieldset>
+      <legend>Using aria-describedby</legend>
+      <label id="dob" for="dob">Date of Birth:</label>
+      <input type="date" name="dob" id="dob" aria-describedby="dob-instructions" />
+      <p id="dob-instructions">MM/DD/YYYY</p>
+    </fieldset>
   </div>
 </template>
 
 <script>
+import slotComponent from "@/components/slotComponent";
 export default {
   name: 'HelloWorld',
+  components: {
+    slotComponent,
+  },
+  data() {
+    return {
+      item : {
+        type: String,
+        default: '',
+      }
+    };
+  },
   props: {
     msg: String
+  },
+  emits: {
+    input: (item) => {
+      if (item === '기민') return true;
+      return false;
+    }
   }
 }
 </script>

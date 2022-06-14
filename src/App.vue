@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <hello-world msg="Welcome to Your Vue.js App" @input="inInput"/>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  methods: {
+    inInput(item) {
+      console.log(item);
+    }
   }
 }
 </script>
