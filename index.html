@@ -6,17 +6,28 @@
             <title>2023-06-19</title>
             <style>
                 table {
-                    width: 100%;
                     border-top: 1px solid black;
+                    border-left: 1px solid black;
                     border-collapse: collapse;
                     font-size: 21px;
                 }
                 th, td {
+                    min-width: 400px;
+                    border-right: 1px solid black;
                     border-bottom: 1px solid black;
                     padding: 5px;
                 }
                 strong {
                     font-size: 24px;
+                }
+                @media (max-width: 400px) {
+                    table {
+                        width: 100vw;
+                        font-size: 32px; 
+                    }
+                    strong {
+                        font-size: 36px;
+                    }
                 }
             </style>
         </head>
